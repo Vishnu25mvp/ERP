@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --accent-primary: #22c55e;
+  --sidebar-bg: #0f172a;
+  --border-radius: 1rem;
+  color-scheme: light;
+}
+
+html.dark {
+  --bg-primary: #000000;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --border-color: #1f2937;
+  --accent-primary: #4ade80;
+  --sidebar-bg: #050505;
+  color-scheme: dark;
+}
+
+* {
+  @apply transition-colors duration-300;
+}
+
+html {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Ensure all major elements inherit theme */
+main, section, article, div, span, p, h1, h2, h3, h4, h5, h6 {
+  background-color: inherit;
+  color: inherit;
+}
+
+/* Theme utility classes */
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.border-border-color {
+  border-color: var(--border-color);
+}
+
+.bg-accent-primary {
+  background-color: var(--accent-primary);
+}
+
+.text-accent-primary {
+  color: var(--accent-primary);
+}
+
+.bg-sidebar {
+  background-color: var(--sidebar-bg);
+}
+
+/* Card component with theme */
+.card {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* Input and form elements with theme */
+input,
+textarea,
+select {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent-primary);
+  outline-color: var(--accent-primary);
+}
+
+/* Button with accent color */
+.btn-primary {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Focus states */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+

@@ -1,0 +1,53 @@
+# ===============================
+# GENERAL
+# ===============================
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+node_modules
+# ===============================
+# NODE (Client - Vite)
+# ===============================
+client/node_modules/
+client/dist/
+client/.env
+client/.env.*
+client/.vite/
+client/coverage/
+
+# ===============================
+# SERVER (Go)
+# ===============================
+server/**/bin/
+server/**/vendor/
+server/**/.env
+server/**/.env.*
+server/**/tmp/
+server/**/build/
+
+# Go build files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binaries
+*.test
+
+# Output of go coverage
+*.out
+
+# ===============================
+# IDE
+# ===============================
+.vscode/
+.idea/
+*.iml
+
+# ===============================
+# OS
+# ===============================
+desktop.ini
