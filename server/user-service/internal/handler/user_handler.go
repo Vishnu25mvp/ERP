@@ -3,6 +3,7 @@ package handler
 import (
 	"net/http"
 
+	"github.com/Vishnu25mvp/ERP/server/user-service/internal/utils"
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,7 +16,5 @@ func NewUserHandler() *UserHandler {
 func (h *UserHandler) GetUsers(c *gin.Context) {
 	users := []string{"Vishnu", "John", "Rahul"}
 
-	c.JSON(http.StatusOK, gin.H{
-		"data": users,
-	})
+	utils.SuccessResponse(c, http.StatusOK, "Users fetched successfully", users)
 }
