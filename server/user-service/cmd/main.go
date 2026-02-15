@@ -8,6 +8,7 @@ import (
 
 	"github.com/Vishnu25mvp/ERP/server/user-service/internal/config"
 	"github.com/Vishnu25mvp/ERP/server/user-service/internal/handler"
+	"github.com/Vishnu25mvp/ERP/server/user-service/internal/model"
 )
 
 func main() {
@@ -17,6 +18,19 @@ func main() {
 	}
 
 	config.ConnectDatabase()
+	config.DB.AutoMigrate(
+	&model.Tenant{},
+	&model.User{},
+	&model.Role{},
+	&model.Permission{},
+	&model.RolePermission{},
+	&model.UserRole{},
+	&model.Product{},
+	&model.Plan{},
+	&model.Subscription{},
+	&model.Payment{},
+)
+
 	config.ConnectRedis()
 
 	r := gin.Default()
